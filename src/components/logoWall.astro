@@ -9,19 +9,17 @@ const technologies = [
   "CSS3",
   "javaScript",
   "git",
-  "supabase",
-  "mysql",
   "bash",
 ];
 ---
 
 <div class="relative overflow-x-hidden py-8">
   <div
-    class="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[var(--background)] to-transparent z-20"
+    class="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[var(--logowall-color)] to-[var(--logowall-color-mid)] z-20"
   >
   </div>
   <div
-    class="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[var(--background)] to-transparent z-20"
+    class="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[var(--logowall-color)] to-[var(--logowall-color-mid)] z-20"
   >
   </div>
 
@@ -32,12 +30,12 @@ const technologies = [
           <img
             src={`/svg/${tech}.svg`}
             alt={tech}
-            class="h-7 w-auto object-contain transition-transform group-hover:scale-110 opacity-60"
+            class="h-7 w-auto object-contain transition-transform group-hover:scale-110 opacity-[var(--icon-opacity)]"
             width="30"
             height="30"
             loading="lazy"
           />
-          <span class="text-lg font-medium text-[var(--white-icon)]">
+          <span class="text-lg font-medium text-[var(--icon-color)]">
             {tech.charAt(0).toUpperCase() + tech.slice(1)}
           </span>
         </div>

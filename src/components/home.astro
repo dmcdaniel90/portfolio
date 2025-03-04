@@ -4,33 +4,32 @@ import LogoWall from "../components/logoWall.astro";
 import SkillsList from "../React/SkillsList.tsx";
 ---
 
-<section class="text-[var(--white)] mt-12 md:mt-0" id="home">
+<section class="text-[var(--text-color)] mt-12 md:mt-0" id="home">
   <div class="max-w-5xl mx-auto space-y-8 md:py-36 pb-14">
     <div class="text-left space-y-4">
-      <p class="text-md md:text-lg text-[var(--white-icon)] shiny-white">
-        Hi, I'm Oscar Hernandez
+      <p class="text-md md:text-lg text-[var(--icon-color)] shiny-white">
+        Hi, I'm Devin McDaniel
       </p>
       <div
         class="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-8 md:gap-4"
       >
         <h1
-          class="text-[var(--white)] text-5xl md:text-6xl font-medium text-pretty leading-none"
+          class="text-[var(--heading-color)] text-5xl md:text-6xl font-medium text-pretty leading-none"
         >
-          Software <br /> Developer
+          Web & Software <br /> Developer
         </h1>
-        <p class="text-md md:text-2xl text-[var(--white-icon)]">
-          Transforming ideas into interactive and seamless digital experiences
-          with cutting-edge <span class="text-[var(--sec)] shiny-sec"
-            >frontend</span
+        <p class="text-md md:text-2xl text-[var(--text-color)]">
+          Engineering tomorrow's digital landscape by fusing <span class="text-[var(--sec)] shiny-sec"
+            >fullstack, AI, and automation</span
           > development.
         </p>
       </div>
       <div class="flex justify-start gap-2 pt-3 md:pt-6">
         <a
           target="_blank"
-          href="https://github.com/gothsec"
+          href="https://github.com/dmcdaniel90"
           aria-label="GitHub"
-          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+          class="text-[var(--icon-color)] hover:text-[var(--icon-color-hover)] transition duration-300 ease-in-out border border-1 border-[var(--icon-border)] hover:border-[var(--icon-border-hover)] p-3 rounded-xl bg-[var(--background-color)] hover:bg-[var(--icon-fill-hover)]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -45,9 +44,9 @@ import SkillsList from "../React/SkillsList.tsx";
         </a>
         <a
           target="_blank"
-          href="https://linkedin.com/in/hernandezoscar-dev"
+          href="https://linkedin.com/in/devinmcdaniel"
           aria-label="LinkedIn"
-          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+          class="text-[var(--icon-color)] hover:text-[var(--icon-color-hover)] transition duration-300 ease-in-out border border-1 border-[var(--icon-border)] hover:border-[var(--icon-border-hover)] p-3 rounded-xl bg-[var(--background-color)] hover:bg-[var(--icon-fill-hover)]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -62,9 +61,9 @@ import SkillsList from "../React/SkillsList.tsx";
         </a>
         <a
           target="_blank"
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=oscarandreshernandezpineda@gmail.com&su=Hey%20Oscar!"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=dmcdaniel9@gmail.com&su=Hey%20Devin!"
           aria-label="Email"
-          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+          class="text-[var(--icon-color)] hover:text-[var(--icon-color-hover)] transition duration-300 ease-in-out border border-1 border-[var(--icon-border)] hover:border-[var(--icon-border-hover)] p-3 rounded-xl bg-[var(--background-color)] hover:bg-[var(--icon-fill-hover)]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +89,7 @@ import SkillsList from "../React/SkillsList.tsx";
       >
         <LetterGlitch
           client:load
-          glitchColors={["#5e4491", "#A476FF", "#241a38"]}
+          glitchColors={["#4f46e5", "#6896FE", "#A2C6FE"]}
           glitchSpeed={33}
           centerVignette={false}
           outerVignette={true}
@@ -103,7 +102,7 @@ import SkillsList from "../React/SkillsList.tsx";
 
 <style is:global>
   .shiny-sec {
-    background: linear-gradient(135deg, #a476ff 25%, #eee5ff 50%, #a476ff 75%);
+    background: linear-gradient(135deg, var(--sec) 25%, #eee5ff 50%, var(--sec) 75%);
     background-size: 400% 100%;
     -webkit-background-clip: text;
     background-clip: text;

@@ -12,6 +12,7 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Software Developer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <link rel="icon" type="image/png" href="/favicon.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,18 +37,64 @@ const { title } = Astro.props;
 
     <title>{title}</title>
   </head>
-  <body class="bg-[--background] md:px-48 lg:px-20 px-9">
+  
+  <!-- Background colour is set here -->
+  <body class="bg-[--background-color] md:px-48 lg:px-20 px-9">
     <slot />
   </body>
 </html>
 
 <style is:global>
   :root {
-    --background: #101010;
-    --sec: #a476ff;
+    --background-color: #ffffff;
+    --heading-color: #3129FF;
+    --text-color: #141414;
+    --nav-background: #6895fe35;
+    --nav-border: #6896FE;
+    --nav-link: #141414;
+    --nav-link-active: #3129FF !important;
+    --logowall-color: #ffffff;
+    --logowall-color-mid: ##ffffff;
+    --sec: #3129FF;
     --white: #dfdfdf;
-    --white-icon: #f3f3f398;
+    --icon-color: #3129FF;
+    --icon-color-hover: #ffffff;
+    --icon-fill-hover: #3129FF;
+    --icon-border: #3129FF;
+    --icon-border-hover: #ffffff;
+    --icon-opacity: 1;
     --white-icon-tr: #f3f3f310;
+    --skills-background: #f3f3f3;
+    --vignette-1: #ffffff00;
+    --vignette-2: #ffffff;
+    --vignette-3: #ffffff9c;
+    --vignette-4: #ffffff00;
+  }
+
+  .dark-mode {
+    --background-color: #101010;
+    --heading-color: #dfdfdf;
+    --text-color: #dfdfdf;
+    --nav-background: #1414149c;
+    --nav-border: #f3f3f310;
+    --nav-link: #ffffff9c;
+    --nav-link-active: white !important;
+    --logowall-color: #101010;
+    --logowall-color-mid: #10101000;
+    --sec: #6896FE;
+    --icon-color: #f3f3f398;
+    --icon-color-hover: #dfdfdf;
+    --icon-fill-hover: #3129FF;
+    --icon-border: #f3f3f310;
+    --icon-border-hover: #dfdfdf;
+    --icon-opacity: 0.6;
+    --white: #dfdfdf;
+    --white-icon-tr: #f3f3f310;
+    --skills-background: #1414149c;
+    --vignette-1: #14141400;
+    --vignette-2: #141414;
+    --vignette-3: #1414149c;
+    --vignette-4: #14141400;
   }
 
   * {
@@ -63,7 +110,7 @@ const { title } = Astro.props;
 
   *::selection {
     background-color: var(--sec);
-    color: var(--background);
+    color: var(--background-color);
   }
 
   /* Scrollbar styles */
@@ -78,7 +125,7 @@ const { title } = Astro.props;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--background);
+    background: var(--background-dark);
     border-radius: 10px;
   }
 
@@ -90,5 +137,10 @@ const { title } = Astro.props;
   * {
     scrollbar-width: thin;
     scrollbar-color: var(--line) var(--container);
+  }
+
+  /*Transition for dark mode*/
+  body {
+    transition: background-color 0.5s, color 0.5s, border-color 0.5s;
   }
 </style>
