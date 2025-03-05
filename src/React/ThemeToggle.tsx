@@ -8,7 +8,7 @@ const toggleStyles = {
     borderRadius: '50%',
     border: 'none',
     outline: 'none',
-    backgroundColor: 'var(--heading-color)',
+    backgroundColor: 'var(--primary-color)',
 };
 const ThemeToggle = () => {
     const [theme, setTheme] = useState('light');

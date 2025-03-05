@@ -68,12 +68,12 @@ const LikeButton = () => {
   if (!isClient) return null;
 
   const borderColorClass = isLiked
-    ? "border-[var(--sec)]"
-    : "border-[var(--white-icon)]";
+    ? "border-[var(--secondary-color)]"
+    : "border-[var(--primary-color)]";
 
   const svgClasses = `
-    w-6 h-6 transition-all duration-300 ease-in-out 
-    ${isLiked ? "text-[var(--sec)] scale-110" : "text-[var(--white-icon)] group-hover:text-[var(--white)] group-hover:scale-105"}
+    w-6 h-6 transition-all duration-300 ease-in-out
+    ${isLiked ? "text-[var(--primary-color)] scale-110" : "text-[var(--primary-color)] group-hover:text-[var(--secondary-color)] group-hover:scale-105"}
     ${triggerAnimation ? " animate-scale" : ""}
   `;
 
@@ -85,7 +85,7 @@ const LikeButton = () => {
         className={`
           group relative w-40 h-10 flex items-center justify-center p-3
           rounded-full transition-all duration-300 ease-in-out transform border-2 ${borderColorClass}
-          ${!isLiked ? "md:hover:border-[var(--white)]" : ""}
+          ${!isLiked ? "md:hover:border-[var(--secondary-color)]" : ""}
           ${triggerAnimation ? " animate-scale" : ""}
         `}
       >
@@ -100,7 +100,7 @@ const LikeButton = () => {
         <span
           className={`
           text-sm pl-3 transition-all duration-300 ease-in-out ${animateLikes ? "animate-scale" : ""}
-          text-[var(--white)]
+          text-[var(--primary-color)]
         `}
         >
           {likes} Likes

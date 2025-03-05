@@ -48,59 +48,42 @@ const { title } = Astro.props;
 <style is:global>
   :root {
     --background-color: #ffffff;
-    --heading-color: #3129FF;
     --text-color: #141414;
-    --nav-background: #6895fe35;
-    --nav-border: #6896FE;
-    --nav-link: #141414;
-    --nav-link-active: #3129FF !important;
-    --logowall-color: #ffffff;
-    --logowall-color-mid: ##ffffff;
-    --sec: #3129FF;
-    --white: #dfdfdf;
-    --icon-color: #3129FF;
-    --icon-color-hover: #ffffff;
-    --icon-fill-hover: #3129FF;
-    --icon-border: #3129FF;
-    --icon-border-hover: #ffffff;
+    --primary-color: #3129FF;
+    --secondary-color: hsl(222, 99%, 70%);
+    --accent-color: #f3f3f3;
+
+    --nav-background: hsla(var(--secondary-color), 0.2);
+    --built-with-brightness: 100;
     --icon-opacity: 1;
-    --white-icon-tr: #f3f3f310;
-    --skills-background: #f3f3f3;
-    --vignette-1: #ffffff00;
-    --vignette-2: #ffffff;
-    --vignette-3: #ffffff9c;
-    --vignette-4: #ffffff00;
+    --icon-border-hover: var(--primary-color);
+
+    --vignette-1: hsla(0, 0, 100%, 0);
+    --vignette-2: hsl(0, 0, 100%);
+    --vignette-3: hsla(0, 0, 100%, 0.6);
+    --vignette-4: hsla(0, 0, 100%, 0);
   }
 
   .dark-mode {
     --background-color: #101010;
-    --heading-color: #dfdfdf;
     --text-color: #dfdfdf;
-    --nav-background: #1414149c;
-    --nav-border: #f3f3f310;
-    --nav-link: #ffffff9c;
-    --nav-link-active: white !important;
-    --logowall-color: #101010;
-    --logowall-color-mid: #10101000;
-    --sec: #6896FE;
-    --icon-color: #f3f3f398;
-    --icon-color-hover: #dfdfdf;
-    --icon-fill-hover: #3129FF;
-    --icon-border: #f3f3f310;
-    --icon-border-hover: #dfdfdf;
-    --icon-opacity: 0.6;
-    --white: #dfdfdf;
-    --white-icon-tr: #f3f3f310;
-    --skills-background: #1414149c;
-    --vignette-1: #14141400;
-    --vignette-2: #141414;
-    --vignette-3: #1414149c;
-    --vignette-4: #14141400;
+    --primary-color: #6896FE;
+    --secondary-color: #3129FF;
+    --accent-color: #141414;
+
+    --nav-background: hsla(var(--accent-color), 0.612);
+    --built-with-brightness: 0;
+    --icon-border-hover: var(--text-color);
+
+    --vignette-1: hsla(0, 0%, 8%, 0);
+    --vignette-2: hsl(0, 0%, 8%);
+    --vignette-3: hsla(0, 0%, 8%, 0.612);
+    --vignette-4: hsla(0, 0%, 8%, 0);
   }
 
   * {
     font-family:
-      "montserrat",
+      "nunitosans",
       -apple-system,
       system-ui,
       sans-serif;
@@ -110,7 +93,7 @@ const { title } = Astro.props;
   }
 
   *::selection {
-    background-color: var(--sec);
+    background-color: var(--secondary-color);
     color: var(--background-color);
   }
 
@@ -142,6 +125,6 @@ const { title } = Astro.props;
 
   /*Transition for dark mode*/
   body {
-    transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+    transition: color 0.5s, border-color 0.5s, background 0.5s;
   }
 </style>
