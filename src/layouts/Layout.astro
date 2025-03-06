@@ -4,10 +4,12 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+const initialTheme = typeof localStorage !== "undefined" && localStorage.getItem("theme") ? localStorage.getItem("theme") : "light";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme={initialTheme}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Software Developer" />
@@ -28,6 +30,15 @@ const { title } = Astro.props;
       media="print"
       onload="this.media='all'"
     />
+
+    <script is:inline>
+      if (typeof localStorage !== "undefined") {
+        const theme = localStorage.getItem("theme");
+        if (theme) {
+          document.documentElement.setAttribute("data-theme", theme);
+        }
+      }
+    </script>
 
     <noscript>
       <link
@@ -64,7 +75,7 @@ const { title } = Astro.props;
     --vignette-4: hsla(0, 0, 100%, 0);
   }
 
-  .dark-mode {
+  html[data-theme="dark"] body {
     --background-color: #101010;
     --text-color: #dfdfdf;
     --primary-color: #6896FE;
