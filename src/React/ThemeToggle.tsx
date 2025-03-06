@@ -12,23 +12,26 @@ const toggleStyles = {
 };
 const ThemeToggle = () => {
     const [theme, setTheme] = useState('light');
+    const [themeIcon, setThemeIcon] = useState(null);
 
     useEffect(() => {
         const savedTheme = localStorage.getItem('theme') || 'light';
         setTheme(savedTheme);
+        setThemeIcon(savedTheme === 'light' ? '☀️' : '🌙');
         document.documentElement.setAttribute('data-theme', savedTheme);
     }, []);
 
     const toggleTheme = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
         setTheme(newTheme);
+        setThemeIcon(newTheme === 'light' ? '☀️' : '🌙');
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
     };
 
     return (
-        <button onClick={toggleTheme} style={toggleStyles}>
-            {theme === 'light' ? '🌙' : '☀️'}
+        <button onClick={toggleTheme} style={toggleStyles} className='fixed top-0 right-0 mt-8 mx-12 transition-all duration-300 ease-in-out'>
+            {themeIcon}
         </button>
     );
 };

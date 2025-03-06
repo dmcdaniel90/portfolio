@@ -36,6 +36,7 @@ const initialTheme = typeof localStorage !== "undefined" && localStorage.getItem
         const theme = localStorage.getItem("theme");
         if (theme) {
           document.documentElement.setAttribute("data-theme", theme);
+          theme === "dark"  
         }
       }
     </script>
@@ -68,6 +69,8 @@ const initialTheme = typeof localStorage !== "undefined" && localStorage.getItem
     --built-with-brightness: 100;
     --icon-opacity: 1;
     --icon-border-hover: var(--primary-color);
+    --logowall-background: var(--secondary-color);
+    --logowall-text: var(--background-color);
 
     --vignette-1: hsla(0, 0, 100%, 0);
     --vignette-2: hsl(0, 0, 100%);
@@ -85,6 +88,8 @@ const initialTheme = typeof localStorage !== "undefined" && localStorage.getItem
     --nav-background: hsla(var(--accent-color), 0.612);
     --built-with-brightness: 0;
     --icon-border-hover: var(--text-color);
+    --logowall-background: var(--background-color);
+    --logowall-text: var(--primary-color);
 
     --vignette-1: hsla(0, 0%, 8%, 0);
     --vignette-2: hsl(0, 0%, 8%);
@@ -138,4 +143,6 @@ const initialTheme = typeof localStorage !== "undefined" && localStorage.getItem
   body {
     transition: color 0.5s, border-color 0.5s, background 0.5s;
   }
+
+
 </style>

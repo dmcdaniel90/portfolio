@@ -1,13 +1,17 @@
 ---
 const technologies = [
-  "astro",
-  "react",
-  "typeScript",
-  "tailwindcss",
-  "nodejs",
   "HTML5",
   "CSS3",
   "javaScript",
+  "tailwindcss",
+  "astro",
+  "react",
+  "typeScript",
+  "nodejs",
+  "c_sharp",
+  "postgreSQL",
+  "sharepoint",
+  "power_automate",
   "git",
   "bash",
 ];
@@ -23,7 +27,7 @@ const technologies = [
   >
   </div>
 
-  <div class="flex animate-scroll hover:animate-paused gap-12 md:gap-20 w-max">
+  <div class="flex animate-scroll hover:animate-paused gap-12 md:gap-20 w-max bg-[var(--logowall-background)] py-4">
     {
       [...technologies, ...technologies, ...technologies].map((tech) => (
         <div class="flex items-center gap-2 group transition-all duration-300">
@@ -35,8 +39,8 @@ const technologies = [
             height="30"
             loading="lazy"
           />
-          <span class="text-lg font-medium text-[var(--primary-color)]">
-            {tech.charAt(0).toUpperCase() + tech.slice(1)}
+          <span class="text-lg font-medium text-[var(--logowall-text)]">
+            {tech.charAt(0).toUpperCase() + tech.slice(1).replace("_a", " A").replace("_s", "-S")}
           </span>
         </div>
       ))
