@@ -62,7 +62,7 @@ const SkillsList = () => {
   };
 
   return (
-    <div className="text-left pt-3 md:pt-9">
+    <div className="w-full text-left pt-3 md:pt-9">
       <h3 className="text-[var(--primary-color)] text-3xl md:text-4xl font-semibold md:mb-6">
         What are my skills?
       </h3>
@@ -71,7 +71,7 @@ const SkillsList = () => {
           <li key={category} className="w-full">
             <div
               onClick={() => toggleItem(category)}
-              className="md:w-[400px] w-full bg-[var(--accent-color)] rounded-2xl text-left hover:bg-opacity-80 transition-all border border-[var(--accent-color)] cursor-pointer overflow-hidden"
+              className="w-full lg:w-[400px] bg-[var(--accent-color)] rounded-2xl text-left hover:bg-opacity-80 transition-all border border-[var(--accent-color)] cursor-pointer overflow-hidden"
             >
               <div className="flex items-center gap-3 p-4">
                 {CategoryIcons[category]}

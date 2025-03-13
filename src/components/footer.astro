@@ -31,7 +31,7 @@
                 class="flex flex-col items-center group"
                 aria-label={link.label}
               >
-                <div class="text-[var(--primary-color)] hover:text-[var(--background-color)] transition duration-300 ease-in-out border border-1 border-[var(--primary-color)] hover:border-[var(--icon-border-hover)] p-3 rounded-xl bg-[var(--background-color)] hover:bg-[var(--primary-color)]">
+                <div class="text-[var(--primary-color)] hover:text-[var(--button-text-hover)] transition duration-300 ease-in-out border border-1 border-[var(--primary-color)] hover:border-[var(--icon-border-hover)] p-3 rounded-xl bg-[var(--background-color)] hover:bg-[var(--primary-color)]">
                   <div set:html={link.icon} />
                 </div>
               </a>
@@ -70,7 +70,7 @@
                 <img
                   src={tech.icon}
                   alt={tech.alt}
-                  class={`h-5 w-5 object-contain filter brightness-[var(--built-with-brightness)] invert opacity-50`}
+                  class={`h-5 w-5 object-contain filter brightness-[var(--built-with-brightness)] invert opacity-80`}
                   loading="lazy"
                 />
                 <span class="text-[var(--primary-color)] text-sm">

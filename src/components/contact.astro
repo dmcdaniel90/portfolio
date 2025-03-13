@@ -1,58 +1,66 @@
+---
+import headshot from "../../public/headshot_transparent.png"
+import Image from "astro/components/Image.astro"
+---
+
 <section id="contact" class="w-full py-12 border-t border-[#ffffff22]">
   <div class="max-w-5xl mx-auto">
     <h2 class="text-lg text-[var(--primary-color)] mb-2 shiny-sec">Let's talk</h2>
     <h3 class="text-4xl md:text-5xl font-medium text-[var(--primary-color)] mb-6">
       Contact
     </h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <div class="text-[var(--text-color)]">
         <p class="mb-4">
           Have a question or a project in mind? Feel free to reach out.
         </p>
         <div class="flex items-center gap-2">
           <span>Location:</span>
-          <span class="text-[var(--primary-color)]">Swindon, England, United Kingdom</span>
+          <span class="text-[var(--primary-color)]">Swindon, United Kingdom</span>
+        </div>
+        <div class="flex items-center">
+           <Image src={headshot} width={200} alt="Click to visit my musician website,DMAC on the Sax" onclick="window.open(`${websiteURL}`, '_blank');" class="mt-8" class:list={["rounded-full m-auto cursor-pointer"]} loading="lazy" decoding="async"/>
         </div>
       </div>
 
       <div>
         <form
           id="contact-form"
-          action="https://formspree.io/f/mnnjznkj"
           method="POST"
           class="flex flex-col gap-4"
+          data-netlify="true"
         >
           <input
             type="text"
             name="from_name"
             placeholder="Name"
             required
-            class="px-4 py-2 bg-[#1414149c] text-[var(--accent-color)] border border-[var(--accent-color)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
+            class="px-4 py-2 bg-[var(--background-color)] text-[var(--text-color)] border border-[var(--primary-color)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
           />
           <input
             type="email"
             name="reply_to"
             placeholder="Email"
             required
-            class="px-4 py-2 bg-[#1414149c] text-[var(--accent-color)] border border-[var(--accent-color)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
+            class="px-4 py-2 bg-[var(--background-color)] text-[var(--text-color)] border border-[var(--primary-color)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
           />
           <textarea
             name="message"
             placeholder="Message"
             rows="6"
             required
-            class="px-4 py-2 bg-[#1414149c] text-[var(--accent-color)] border border-[var(--accent-color)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] resize-none"
+            class="px-4 py-2 bg-[var(--background-color)] text-[var(--text-color)] border border-[var(--primary-color)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] resize-none"
           ></textarea>
           <button
             type="submit"
-            class="px-4 py-2 bg-[var(--accent-color)] text-[var(--accent-color)] rounded-lg opacity-60 transition-opacity border border-[var(--accent-color)] hover:opacity-100 hover:bg-[var(--accent-color)]"
+            class="px-4 py-2 bg-[var(--background-color)] text-[var(--primary-color)] rounded-lg opacity-80 transition-opacity border border-[var(--primary-color)] hover:opacity-100 hover:bg-[var(--primary-color)] hover:text-[var(--text-color)]"
           >
             Submit
           </button>
         </form>
         <div
           id="form-message"
-          class="hidden justify-center items-center mt-4 text-[var(--accent-color)] text-lg"
+          class="hidden justify-center items-center mt-4 text-[var(--primary-color)] text-lg"
         >
           ✅ Thank you for your message!
         </div>
@@ -89,4 +97,8 @@
       alert("There was a problem sending your message.");
     }
   });
+</script>
+
+<script is:inline>
+  const websiteURL = 'https://devinmcdaniel.com'
 </script>

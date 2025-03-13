@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import svgl from "../../public/svgl.png";
-import stockin from "../../public/stockin.png";
+import pokemon from "../../public/pokemon.jpeg";
+import facefinderpro from "../../public/facefinderpro.png";
 
 interface Project {
   title: string;
@@ -9,22 +9,25 @@ interface Project {
   link: string;
   preview: string;
   status: string;
+  description: string;
 }
 
 const projects: Project[] = [
   {
-    title: "StockIn",
-    image: stockin as ImageMetadata,
-    link: "https://github.com/gothsec/stockin-demo",
-    preview: "https://stockin-demo.vercel.app",
+    title: "FaceFinderPro",
+    image: facefinderpro as ImageMetadata,
+    link: "https://github.com/dmcdaniel90/smartbrain",
+    preview: "https://facefinderpro.netlify.app",
     status: "In Development",
+    description: "An AI-powered face recognition app built with React, Node.js, Express, and PostgreSQL. This project is helping me to work on creating fullstack applications with authentication and database management. The implementation is set up and I am working on deployment.",
   },
   {
-    title: "Svgl.app",
-    image: svgl as ImageMetadata,
-    link: "https://github.com/pheralb/svgl",
-    preview: "https://svgl.app",
-    status: "Contributor",
+    title: "Who's That Pokemon?",
+    image: pokemon as ImageMetadata,
+    link: "https://github.com/dmcdaniel90/whos-that-pokemon",
+    preview: "https://pokeguessinggame.netlify.app",
+    status: "v2.0.0",
+    description: "A Pokemon guessing game built with React and Typescript. While simplistic, it utilises the power of React Hooks and TanStack Query for data management and state management.",
   },
 ];
 ---
@@ -37,8 +40,7 @@ const projects: Project[] = [
     <h2 class="text-lg text-[var(--primary-color)] mb-2 shiny-sec">My work</h2>
     <h3 class="text-4xl md:text-5xl text-[var(--primary-color)] font-medium mb-8">Projects</h3>
 
-    <!-- TODO: Convert the hover:white to look like the social icons in home.astro  -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       {
         projects.map((project) => (
           <div class="group">
@@ -48,6 +50,7 @@ const projects: Project[] = [
               rel="noopener noreferrer"
               class="block"
             >
+              {/* Project image */}
               <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
                 <Image
                   src={project.image}
@@ -55,19 +58,21 @@ const projects: Project[] = [
                   class="w-full h-48 md:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div class="flex items-center px-3">
+              <div class="flex items-center px-3 mt-8 lg:mt-0">
+                {/* Project title and status */}
                 <div class="flex-grow">
-                  <h4 class="text-2xl font-semibold">{project.title}</h4>
+                  <h4 class="text-2xl text-[var(--primary-color)] font-semibold">{project.title}</h4>
                   <span class="py-1 text-sm text-[var(--text-color)]">
                     {project.status}
                   </span>
                 </div>
+                {/* Project links */}
                 <div class="flex gap-2 ml-auto">
                   <a
                     target="_blank"
                     href={project.link}
                     aria-label="GitHub"
-                    class="size-14 flex justify-center items-center text-[var(--accent-color)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--accent-color)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--accent-color)]"
+                    class="text-[var(--primary-color)] hover:text-[var(--button-text-hover)] transition duration-300 ease-in-out border border-1 border-[var(--primary-color)] hover:border-[var(--icon-border-hover)] p-3 rounded-xl bg-[var(--background-color)] hover:bg-[var(--primary-color)]"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +87,7 @@ const projects: Project[] = [
                     target="_blank"
                     href={project.preview}
                     aria-label="Preview"
-                    class="size-14 flex justify-center items-center text-[var(--accent-color)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--accent-color)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--accent-color)]"
+                    class="text-[var(--primary-color)] hover:text-[var(--button-text-hover)] transition duration-300 ease-in-out border border-1 border-[var(--primary-color)] hover:border-[var(--icon-border-hover)] p-3 rounded-xl bg-[var(--background-color)] hover:bg-[var(--primary-color)]"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -95,6 +100,10 @@ const projects: Project[] = [
                   </a>
                 </div>
               </div>
+                {/* Project description */}
+                <p class="mt-8 lg:mt-4 text-[var(--text-color)]">
+                  {project.description}
+                </p>
             </a>
           </div>
         ))
@@ -104,7 +113,7 @@ const projects: Project[] = [
       target="_blank"
       href="https://github.com/Gothsec?tab=repositories"
       aria-label="GitHub"
-      class="w-full flex items-center justify-center gap-2 mt-9 text-[var(--accent-color)] hover:text-white transition duration-300 ease-in-out border border-[var(--accent-color)] p-3 rounded-full bg-[#1414149c] hover:bg-[var(--accent-color)]"
+      class="w-full flex items-center justify-center gap-2 mt-9 text-[var(--primary-color)] hover:text-white transition duration-300 ease-in-out border border-[var(--primary-color)] p-3 rounded-full bg-[var(--background-color)] hover:bg-[var(--primary-color)]"
     >
       <span class="md:text-lg text-md">More projects on</span>
       <svg

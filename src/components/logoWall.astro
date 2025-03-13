@@ -9,7 +9,7 @@ const technologies = [
   "typeScript",
   "nodejs",
   "c_sharp",
-  "postgreSQL",
+  "postgresql",
   "sharepoint",
   "power_automate",
   "git",
@@ -17,7 +17,7 @@ const technologies = [
 ];
 ---
 
-<div class="relative overflow-x-hidden py-8">
+<div class="relative overflow-x-hidden my-8">
   <div
     class="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[var(--background-color)] to-[#ffffff00] z-20"
   >
@@ -40,7 +40,7 @@ const technologies = [
             loading="lazy"
           />
           <span class="text-lg font-medium text-[var(--logowall-text)]">
-            {tech.charAt(0).toUpperCase() + tech.slice(1).replace("_a", " A").replace("_s", "-S")}
+            {tech.charAt(0).toUpperCase() + tech.slice(1).replace("_a", " A").replace("_s", "-S").replace("sql", "SQL").replace("css", "CSS").replace('js', 'JS')}
           </span>
         </div>
       ))

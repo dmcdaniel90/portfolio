@@ -7,7 +7,7 @@ import ThemeToggle from "@/React/ThemeToggle";
 ---
 <ThemeToggle client:load />
 <section class="text-[var(--text-color)] mt-12 md:mt-0" id="home">
-  <div class="max-w-5xl mx-auto space-y-8 md:py-36 pb-14">
+  <div class="max-w-5xl mx-auto space-y-4 lg:space-y-8 md:py-36 lg:pb-14">
     <div class="text-left space-y-4">
       <p class="text-md md:text-lg text-[var(--primary-color)] shiny-white">
         Hi, I'm Devin McDaniel
@@ -26,7 +26,7 @@ import ThemeToggle from "@/React/ThemeToggle";
           > development.
         </p>
       </div>
-      <div class="flex justify-start space-x-6 sm:space-x-8 pt-3 md:pt-6">
+      <div class="flex justify-center lg:justify-start space-x-6 sm:space-x-14 lg:space-x-8 pt-3 md:pt-6">
         {
             [
               {
@@ -51,7 +51,7 @@ import ThemeToggle from "@/React/ThemeToggle";
                 class="flex flex-col items-center group"
                 aria-label={link.label}
               >
-                <div class="text-[var(--primary-color)] hover:text-[var(--background-color)] transition duration-300 ease-in-out border border-1 border-[var(--primary-color)] hover:border-[var(--icon-border-hover)] p-3 rounded-xl bg-[var(--background-color)] hover:bg-[var(--primary-color)]">
+                <div class="text-[var(--primary-color)] hover:text-[var(--button-text-hover)] transition duration-300 ease-in-out border border-1 border-[var(--primary-color)] hover:border-[var(--icon-border-hover)] p-3 rounded-xl bg-[var(--background-color)] hover:bg-[var(--primary-color)]">
                   <div set:html={link.icon} />
                 </div>
               </a>
@@ -65,7 +65,7 @@ import ThemeToggle from "@/React/ThemeToggle";
     <div class="flex flex-col lg:flex-row items-center gap-8">
       <SkillsList client:load />
       <div
-        class="flex justify-center md:w-full md:h-[292px] size-[290px] pt-3 md:pt-9 md:ml-16"
+        class="flex justify-center md:w-full h-[150px] lg:h-[292px] size-[290px] pt-3 md:pt-9 lg:ml-16"
       >
         <LetterGlitch
           client:load
