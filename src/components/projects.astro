@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 import pokemon from "../../public/pokemon.jpeg";
 import facefinderpro from "../../public/facefinderpro.png";
+import sharepoint from "../../public/sharepoint.png";
+import titan from "../../public/titan.png";
 
 interface Project {
   title: string;
@@ -29,6 +31,22 @@ const projects: Project[] = [
     status: "v2.0.0",
     description: "A Pokemon guessing game built with React and Typescript. While simplistic, it utilises the power of React Hooks and TanStack Query for data management and state management.",
   },
+  {
+    title: "Sharepoint Intranet",
+    image: sharepoint as ImageMetadata,
+    link: null,
+    preview: null,
+    status: "In Development", 
+    description: "A Microsoft SharePoint Intranet built using Sharepoint Framework and React class components. This project demonstrates a modern approach to developing interactive web applications with Sharepoint sites",
+  },
+  {
+    title: "Titan JS",
+    image: titan as ImageMetadata,
+    link: null,
+    preview: null,
+    status: "v1.0.0",
+    description: "Built from a detailed prompt, this AI assistant is skilled in JavaScript and React. It can explain code, generate code challenges,and even keep track of a user's progress through a gamified learning experience. It's a versatile tool for developers and educators alike.",
+  }
 ];
 ---
 
