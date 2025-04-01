@@ -4,6 +4,8 @@ import pokemon from "../../public/pokemon.jpeg";
 import facefinderpro from "../../public/facefinderpro.png";
 import sharepoint from "../../public/sharepoint.png";
 import titan from "../../public/titan.png";
+import rangefinder from "../../public/rangefinder.jpeg";
+import blog from "../../public/blog.jpeg";
 
 interface Project {
   title: string;
@@ -30,6 +32,21 @@ const projects: Project[] = [
     preview: "https://pokeguessinggame.netlify.app",
     status: "v2.0.0",
     description: "A Pokemon guessing game built with React and Typescript. While simplistic, it utilises the power of React Hooks and TanStack Query for data management and state management. The app can be easily launched via Docker, using Docker-Compose."
+  },
+  {
+    title: "Rangefinder",
+    image: rangefinder as ImageMetadata,
+    link: "https://github.com/dmcdaniel90/rangefinder",
+    status: "v1.0.0",
+    description: "An application that visualises the distance between two points on a map. Built with React, Typescript, and the Google Maps API"
+  },
+  {
+    title: "Blog",
+    image: blog as ImageMetadata,
+    link: "https://github.com/dmcdaniel90/saxcoderblog",
+    preview: "https://blog.devinmcdaniel.com",
+    status: "v1.0.0",
+    description: "My personal blog built with Astro, TailwindCSS, Preact, Markdown, and Decap CMS. I use this blog to share my thoughts and learnings on web development and other topics.",
   },
   {
     title: "Sharepoint Intranet",
@@ -59,7 +76,7 @@ const projects: Project[] = [
         projects.map((project) => (
           <div class="group">
             <a
-              href={project.preview}
+              href={project.preview ? project.preview : null}
               target="_blank"
               rel="noopener noreferrer"
               class="block"
@@ -106,7 +123,7 @@ const projects: Project[] = [
                     aria-label="Preview"
                     class="text-[var(--primary-color)] hover:text-[var(--button-text-hover)] transition duration-300 ease-in-out border border-1 border-[var(--primary-color)] hover:border-[var(--icon-border-hover)] p-3 rounded-xl bg-[var(--background-color)] hover:bg-[var(--primary-color)]"
                      style={{
-                      display: project.link ? "block" : "none"
+                      display: project.preview ? "block" : "none"
                     }}
                   >
                     <svg
