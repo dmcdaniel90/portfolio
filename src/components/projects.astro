@@ -8,8 +8,8 @@ import titan from "../../public/titan.png";
 interface Project {
   title: string;
   image: ImageMetadata;
-  link: string;
-  preview: string;
+  link?: string;
+  preview?: string;
   status: string;
   description: string;
 }
@@ -19,7 +19,7 @@ const projects: Project[] = [
     title: "FaceFinderPro",
     image: facefinderpro as ImageMetadata,
     link: "https://github.com/dmcdaniel90/smartbrain",
-    preview: "https://facefinderpro.netlify.app",
+    preview: "https://facefinderpro.code.devinmcdaniel.com",
     status: "In Development",
     description: "An AI-powered face recognition app built with React, Node.js, Express, and PostgreSQL. This project is helping me to work on creating fullstack applications with authentication and database management. The implementation is set up and I am working on deployment.",
   },
@@ -34,16 +34,12 @@ const projects: Project[] = [
   {
     title: "Sharepoint Intranet",
     image: sharepoint as ImageMetadata,
-    link: null,
-    preview: null,
     status: "In Development", 
     description: "A Microsoft SharePoint Intranet built using Sharepoint Framework and React class components. This project demonstrates a modern approach to developing interactive web applications with Sharepoint sites",
   },
   {
     title: "Titan JS",
     image: titan as ImageMetadata,
-    link: null,
-    preview: null,
     status: "v1.0.0",
     description: "Built from a detailed prompt, this AI assistant is skilled in JavaScript and React. It can explain code, generate code challenges,and even keep track of a user's progress through a gamified learning experience. It's a versatile tool for developers and educators alike.",
   }
@@ -91,6 +87,9 @@ const projects: Project[] = [
                     href={project.link}
                     aria-label="GitHub"
                     class="text-[var(--primary-color)] hover:text-[var(--button-text-hover)] transition duration-300 ease-in-out border border-1 border-[var(--primary-color)] hover:border-[var(--icon-border-hover)] p-3 rounded-xl bg-[var(--background-color)] hover:bg-[var(--primary-color)]"
+                    style={{
+                      display: project.link ? "block" : "none"
+                    }}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -106,6 +105,9 @@ const projects: Project[] = [
                     href={project.preview}
                     aria-label="Preview"
                     class="text-[var(--primary-color)] hover:text-[var(--button-text-hover)] transition duration-300 ease-in-out border border-1 border-[var(--primary-color)] hover:border-[var(--icon-border-hover)] p-3 rounded-xl bg-[var(--background-color)] hover:bg-[var(--primary-color)]"
+                     style={{
+                      display: project.link ? "block" : "none"
+                    }}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +131,7 @@ const projects: Project[] = [
     </div>
     <a
       target="_blank"
-      href="https://github.com/Gothsec?tab=repositories"
+      href="https://github.com/dmcdaniel90?tab=repositories"
       aria-label="GitHub"
       class="w-full flex items-center justify-center gap-2 mt-9 text-[var(--primary-color)] hover:text-white transition duration-300 ease-in-out border border-[var(--primary-color)] p-3 rounded-full bg-[var(--background-color)] hover:bg-[var(--primary-color)]"
     >
