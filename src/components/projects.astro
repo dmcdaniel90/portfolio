@@ -12,7 +12,6 @@ interface Project {
   image: ImageMetadata;
   link?: string;
   preview?: string;
-  status: string;
   description: string;
 }
 
@@ -22,22 +21,19 @@ const projects: Project[] = [
     image: facefinderpro as ImageMetadata,
     link: "https://github.com/dmcdaniel90/smartbrain",
     preview: "https://facefinderpro.code.devinmcdaniel.com",
-    status: "In Development",
-    description: "An AI-powered face recognition app built with React, Node.js, Express, and PostgreSQL. This project is helping me to work on creating fullstack applications with authentication and database management. The implementation is set up and I am working on deployment.",
+    description: "An AI-powered face recognition app built with React. This full-stack application uses Zustand and Immer for state management, Clarifai's Face Recognition API for image processing, a custom Express server, a Supabase-hosted PostgreSQL database for user authentication and storage, and Railway for deployment.",
   },
   {
     title: "Who's That Pokemon?",
     image: pokemon as ImageMetadata,
     link: "https://github.com/dmcdaniel90/whos-that-pokemon",
     preview: "https://pokeguessinggame.netlify.app",
-    status: "v2.0.0",
     description: "A Pokemon guessing game built with React and Typescript. While simplistic, it utilises the power of React Hooks and TanStack Query for data management and state management. The app can be easily launched via Docker, using Docker-Compose."
   },
   {
     title: "Rangefinder",
     image: rangefinder as ImageMetadata,
     link: "https://github.com/dmcdaniel90/rangefinder",
-    status: "v1.0.0",
     description: "An application that visualises the distance between two points on a map. Built with React, Typescript, and the Google Maps API"
   },
   {
@@ -45,19 +41,16 @@ const projects: Project[] = [
     image: blog as ImageMetadata,
     link: "https://github.com/dmcdaniel90/saxcoderblog",
     preview: "https://blog.devinmcdaniel.com",
-    status: "v1.0.0",
     description: "My personal blog built with Astro, TailwindCSS, Preact, Markdown, and Decap CMS. I use this blog to share my thoughts and learnings on web development and other topics.",
   },
   {
     title: "Sharepoint Intranet",
     image: sharepoint as ImageMetadata,
-    status: "In Development", 
     description: "A Microsoft SharePoint Intranet built using Sharepoint Framework and React class components. This project demonstrates a modern approach to developing interactive web applications with Sharepoint sites",
   },
   {
     title: "Titan JS (From AI Prompt Library)",
     image: titan as ImageMetadata,
-    status: "v1.0.0",
     link: "https://github.com/dmcdaniel90/ai-prompts",
     description: "Built from a detailed prompt, this AI assistant is skilled in JavaScript and React. It can explain code, generate code challenges,and even keep track of a user's progress through a gamified learning experience. It's a versatile tool for developers and educators alike. Click the link to view this and many more of my custom prompts",
   }
@@ -94,9 +87,6 @@ const projects: Project[] = [
                 {/* Project title and status */}
                 <div class="flex-grow">
                   <h4 class="text-2xl text-[var(--primary-color)] font-semibold">{project.title}</h4>
-                  <span class="py-1 text-sm text-[var(--text-color)]">
-                    {project.status}
-                  </span>
                 </div>
                 {/* Project links */}
                 <div class="flex gap-2 ml-auto">
